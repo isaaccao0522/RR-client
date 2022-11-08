@@ -33,7 +33,7 @@ export const ForgetPasswordScreen = () => {
   const submitHandler = async ( e) => {
     e.preventDefault ();
     try {
-      const { data } = await Axios.post ( `${ url}/api/users/reset`, {
+      const { data } = await Axios.post ( `${ url}/api/users/forgetpassword`, {
         email,
         phone,
       });
