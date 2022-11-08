@@ -25,6 +25,8 @@ import { getError } from '../utils.js';
 
 
 export const Header = () => {
+  const url = "https://qq-api.onrender.com";
+
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const { cart, userInfo } = state;
 
@@ -43,7 +45,7 @@ export const Header = () => {
   useEffect ( () => {
     const fetchCategories = async () => {
       try {
-        const { data } = await Axios.get ( `/api/products/categories`);
+        const { data } = await Axios.get ( `${ url}/api/products/categories`);
         setCategories ( data);
       } catch ( error) {
         toast.error ( getError ( error));
