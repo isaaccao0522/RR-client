@@ -8,7 +8,6 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
 const root = ReactDOM.createRoot ( document.querySelector ('#root'));
 
 

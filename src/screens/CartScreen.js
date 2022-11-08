@@ -19,6 +19,8 @@ import { Store } from '../Store';
 
 
 export default function CartScreen() {
+  const url = "https://qq-api.onrender.com/";
+
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const {
     cart: { cartItems },
@@ -27,7 +29,7 @@ export default function CartScreen() {
   const navigate = useNavigate ();
 
   const updateCartHandler = async ( item, quantity) => {
-    const { data } = await Axios.get ( `/api/products/${ item._id}`);
+    const { data } = await Axios.get ( `${ url}/api/products/${ item._id}`);
     if ( data.countInStock < quantity) {
       toast.error ( 'Sorry. Product is out of stock');
       return;

@@ -46,7 +46,7 @@ export const PaymentMethodScreen = () => {
         payload: paymentMethodName 
       });
       localStorage.setItem ( 'paymentMethod', paymentMethodName);
-      navigate('/placeorder');
+      navigate( '/placeorder');
     }
   };
 

@@ -21,6 +21,8 @@ import { getError } from '../utils';
 
 
 export const SignupScreen = () => {
+  const url = "https://qq-api.onrender.com/";
+
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const { userInfo } = state;
 
@@ -51,7 +53,7 @@ export const SignupScreen = () => {
       return;
     }
     try {
-      const { data } = await Axios.post ( '/api/users/signup', {
+      const { data } = await Axios.post ( `${ url}/api/users/signup`, {
         name,
         email,
         phone,
@@ -75,14 +77,14 @@ export const SignupScreen = () => {
   }, [  navigate, redirect, userInfo]);
 
 
-  const [validated, setValidated] = useState(false);
+  const [ validated, setValidated] = useState(false);
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+    if (form.checkValidity () === false) {
+      event.preventDefault ();
+      event.stopPropagation ();
     }
-    setValidated(true);
+    setValidated ( true);
   };
 
 

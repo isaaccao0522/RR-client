@@ -42,6 +42,8 @@ const reducer = ( state, action) => {
 
 
 export const HomeScreen = () => {
+  const url = "https://qq-api.onrender.com/";
+
   const [{ loading, error, products }, dispatch] = useReducer ( logger(reducer), {
     products: [],
     loading: true,
@@ -52,7 +54,7 @@ export const HomeScreen = () => {
     const fetchData = async () => {
       dispatch ({ type: 'FETCH_REQUEST' });
       try {
-        const result = await Axios.get ( '/api/products');
+        const result = await Axios.get ( `${ url}/api/products`);
         dispatch ({ 
           type: 'FETCH_SUCCESS', 
           payload: result.data 

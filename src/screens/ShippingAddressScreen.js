@@ -19,7 +19,9 @@ import Container from 'react-bootstrap/esm/Container';
 
 
 export const ShippingAddressScreen = () => {
-  const { state, dispatch: ctxDispatch } = useContext( Store);
+  const url = "https://qq-api.onrender.com/";
+
+  const { state, dispatch: ctxDispatch } = useContext ( Store);
   const {
     userInfo,
     cart: { shippingAddress },
@@ -38,7 +40,7 @@ export const ShippingAddressScreen = () => {
 
   useEffect(() => {
     if (  !userInfo) {
-      navigate( '/signin?redirect=/shipping');
+      navigate( `${ url}/signin?redirect=/shipping`);
     }
   }, [ userInfo, navigate]);
 

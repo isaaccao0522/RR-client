@@ -38,6 +38,8 @@ const reducer = ( state, action) => {
 };
 
 export const ProfileScreen = () => {
+  const url = "https://qq-api.onrender.com/";
+
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const { userInfo } = state;
   const navigate = useNavigate ();
@@ -63,7 +65,7 @@ export const ProfileScreen = () => {
     }
     else {
       try {
-        const { data } = await Axios.put ( '/api/users/profile',
+        const { data } = await Axios.put ( `${ url}/api/users/profile`,
           {
             name,
             email,

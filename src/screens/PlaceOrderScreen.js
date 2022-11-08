@@ -38,6 +38,7 @@ const reducer = ( state, action) => {
 
 
 export const PlaceOrderScreen = () => {
+  const url = "https://qq-api.onrender.com/";
 
   const navigate = useNavigate();
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -46,7 +47,6 @@ export const PlaceOrderScreen = () => {
   const [{ loading }, dispatch] = useReducer(reducer, {
     loading: false,
   });
-
 
 
   cart.itemsPrice = cart.cartItems.reduce ( ( a, c) => a + c.quantity * c.price, 0)
@@ -60,7 +60,7 @@ export const PlaceOrderScreen = () => {
     try {
       dispatch ({ type: 'CREATE_REQUEST' });
 
-      const { data } = await Axios.post ( '/api/orders',
+      const { data } = await Axios.post ( `${ url}/api/orders`,
         {
           orderItems: cart.cartItems,
           shippingAddress: cart.shippingAddress,

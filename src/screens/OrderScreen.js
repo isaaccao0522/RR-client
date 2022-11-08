@@ -99,6 +99,8 @@ const reducer = (state, action) => {
 
 
 export const OrderScreen = () => {
+  const url = "https://qq-api.onrender.com/";
+
   const { state } = useContext ( Store);
   const { userInfo } = state;
 
@@ -122,7 +124,7 @@ export const OrderScreen = () => {
     const fetchOrder = async () => {
       try {
         dispatch ({ type: 'FETCH_REQUEST' });
-        const { data } = await Axios.get( `/api/orders/${orderId}`, 
+        const { data } = await Axios.get( `${ url}/api/orders/${ orderId}`, 
         {
           headers: { authorization: `Bearer ${userInfo.token}` },
         });

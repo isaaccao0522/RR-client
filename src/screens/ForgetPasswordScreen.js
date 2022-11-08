@@ -20,6 +20,8 @@ import { getError } from '../utils';
 
 
 export const ForgetPasswordScreen = () => {
+  const url = "https://qq-api.onrender.com/";
+
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const { userInfo } = state;
 
@@ -31,7 +33,7 @@ export const ForgetPasswordScreen = () => {
   const submitHandler = async ( e) => {
     e.preventDefault ();
     try {
-      const { data } = await Axios.post ( '/api/users/reset', {
+      const { data } = await Axios.post ( `${ url}/api/users/reset`, {
         email,
         phone,
       });
