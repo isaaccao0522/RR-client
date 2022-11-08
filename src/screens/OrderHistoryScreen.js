@@ -43,7 +43,7 @@ const reducer = ( state, action) => {
 };
 
 export const OrderHistoryScreen = () => {
-  const url = "https://qq-api.onrender.com/";
+  const url = "https://qq-api.onrender.com";
 
   const { state } = useContext(Store);
   const { userInfo } = state;

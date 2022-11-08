@@ -76,7 +76,7 @@ export const ratings = [
 
 
 export default function SearchScreen() {
-  const url = "https://qq-api.onrender.com/";
+  const url = "https://qq-api.onrender.com";
 
   const navigate = useNavigate();
   const { search } = useLocation();

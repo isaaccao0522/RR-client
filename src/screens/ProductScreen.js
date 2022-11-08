@@ -50,7 +50,7 @@ const reducer = ( state, action) => {
 
 
 export const  ProductScreen = () => {
-  const url = "https://qq-api.onrender.com/";
+  const url = "https://qq-api.onrender.com";
 
   const params = useParams();
   const { slug } = params;

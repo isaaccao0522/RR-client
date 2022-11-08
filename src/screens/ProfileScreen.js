@@ -38,7 +38,7 @@ const reducer = ( state, action) => {
 };
 
 export const ProfileScreen = () => {
-  const url = "https://qq-api.onrender.com/";
+  const url = "https://qq-api.onrender.com";
 
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const { userInfo } = state;

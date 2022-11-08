@@ -19,7 +19,7 @@ import { Store } from '../Store';
 
 
 export default function CartScreen() {
-  const url = "https://qq-api.onrender.com/";
+  const url = "https://qq-api.onrender.com";
 
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const {

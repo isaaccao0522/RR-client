@@ -42,7 +42,7 @@ const reducer = ( state, action) => {
 
 
 export const HomeScreen = () => {
-  const url = "https://qq-api.onrender.com/";
+  const url = "https://qq-api.onrender.com";
 
   const [{ loading, error, products }, dispatch] = useReducer ( logger(reducer), {
     products: [],
@@ -91,7 +91,7 @@ export const HomeScreen = () => {
           : (
               <Row>
                 { products.map ( ( product) => (
-                  <Col key={ product.slug} sm={6} md={4} lg={3} className="mb-3">
+                  <Col className="mb-3" sm={ 6} md={ 4} lg={ 3}  key={ product.slug}>
                     <Product product={ product}></Product>
                   </Col>
                   ))
