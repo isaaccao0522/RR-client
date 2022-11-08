@@ -54,7 +54,7 @@ export const HomeScreen = () => {
     const fetchData = async () => {
       dispatch ({ type: 'FETCH_REQUEST' });
       try {
-        const result = await Axios.get ( `https://qq-api.onrender.com/api/products`);
+        const result = await Axios.get ( `${ url}/api/products`);
         dispatch ({ 
           type: 'FETCH_SUCCESS', 
           payload: result.data 

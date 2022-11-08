@@ -2,14 +2,19 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 
 
-export function Product(props) {
+export const Product = ( props) => {
+  const url = "https://qq-api.onrender.com";
+
   const { product } = props;
   const navigate = useNavigate ();
 
   return (
     <Card className="mb-2 border-0 product-card"
-      onClick={() => navigate ( `/product/${ product.slug}`)} >
-      <img src={ product.image} className="card-img-top" alt={ product.name} />
+      onClick={() => navigate ( `${ url}/product/${ product.slug}`)} >
+      <img src={ product.image} 
+        className="card-img-top" 
+        alt={ product.name} 
+      />
       <Card.Body className="border-0 text-center text-dark">
         <Card.Title className="mb-2" >
           { product.name}
