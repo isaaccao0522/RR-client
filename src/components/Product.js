@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 
 
 export const Product = ( props) => {
-  const url = "https://rr-server.adaptable.app";
+  // const url = "https://rr-server.adaptable.app";
 
   const { product } = props;
   const navigate = useNavigate ();
 
   return (
     <Card className="mb-2 border-0 product-card"
-      onClick={() => navigate ( `${ url}/product/${ product.slug}`)} >
+      onClick={() => navigate ( `/product/${ product.slug}`)} >
       <img src={ product.image} 
         className="card-img-top" 
         alt={ product.name} 
