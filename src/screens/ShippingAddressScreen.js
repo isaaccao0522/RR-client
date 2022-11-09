@@ -19,7 +19,7 @@ import Container from 'react-bootstrap/esm/Container';
 
 
 export const ShippingAddressScreen = () => {
-  const url = "https://qq-api.onrender.com";
+  const url = "https://rr-server.adaptable.app";
 
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const {

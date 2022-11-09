@@ -25,7 +25,7 @@ import { getError } from '../utils.js';
 
 
 export const Header = () => {
-  const url = "https://qq-api.onrender.com";
+  const url = "https://rr-server.adaptable.app";
 
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const { cart, userInfo } = state;

@@ -42,7 +42,7 @@ const reducer = ( state, action) => {
 
 
 export const HomeScreen = () => {
-  const url = "https://qq-api.onrender.com";
+  const url = "https://rr-server.adaptable.app";
 
   const [{ loading, error, products }, dispatch] = useReducer ( logger(reducer), {
     products: [],

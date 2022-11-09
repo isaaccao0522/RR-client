@@ -21,7 +21,7 @@ import { getError } from '../utils';
 
 
 export const SignupScreen = () => {
-  const url = "https://qq-api.onrender.com";
+  const url = "https://rr-server.adaptable.app";
 
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const { userInfo } = state;
@@ -78,9 +78,10 @@ export const SignupScreen = () => {
 
 
   const [ validated, setValidated] = useState(false);
-  const handleSubmit = (event) => {
+
+  const handleSubmit = ( event) => {
     const form = event.currentTarget;
-    if (form.checkValidity () === false) {
+    if ( form.checkValidity () === false) {
       event.preventDefault ();
       event.stopPropagation ();
     }
