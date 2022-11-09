@@ -76,7 +76,7 @@ export const ratings = [
 
 
 export default function SearchScreen() {
-  const url = "https://rr-api.onrender.com";
+  const url = "https://rr-server.adaptable.app";
   
   const navigate = useNavigate ();
   const { search } = useLocation ();

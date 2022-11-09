@@ -20,7 +20,7 @@ import { getError } from '../utils';
 
 
 export const ForgetPasswordScreen = () => {
-  const url = "https://rr-api.onrender.com";
+  const url = "https://rr-server.adaptable.app";
 
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const { userInfo } = state;

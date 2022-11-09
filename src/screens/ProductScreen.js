@@ -50,7 +50,7 @@ const reducer = ( state, action) => {
 
 
 export const  ProductScreen = () => {
-  const url = "https://rr-api.onrender.com";
+  const url = "https://rr-server.adaptable.app";
 
   const params = useParams();
   const { slug } = params;
@@ -89,7 +89,7 @@ export const  ProductScreen = () => {
     const existItem = cart.cartItems.find ( ( x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await Axios.get ( `${ url}/api/products/${ product._id}`);
-    
+
     if ( data.countInStock < quantity) {
       toast.error ( 'Sorry. Product is out of stock');
       return;

@@ -23,10 +23,6 @@ const initialState = {
 
 const reducer = ( state, action) => {
   switch ( action.type) {
-    // case 'SET_FULLBOX_ON':
-    //   return { ...state, fullBox: true };
-    // case 'SET_FULLBOX_OFF':
-    //   return { ...state, fullBox: false };
 
     //Cart
     case 'CART_ADD_ITEM':

@@ -32,7 +32,7 @@ const reducer = (state, action) => {
 };
 
 export const SelectList = () => {
-  const url = "https://rr-api.onrender.com";
+  const url = "https://rr-server.adaptable.app";
   
   const [{ loading, error, products, pages, countProducts }, dispatch] = useReducer ( reducer, {
     loading: true,

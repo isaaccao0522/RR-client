@@ -12,8 +12,7 @@ export const AdminRoute = ( { children }) => {
 
   
   return (
-    userInfo && <Navigate to="/signin" />
-    // userInfo && userInfo.isAdmin ? children : <Navigate to="/signin" />
+    userInfo ? children : <Navigate to="/signin" />
   );
 };
 
