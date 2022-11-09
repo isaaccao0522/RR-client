@@ -7,6 +7,7 @@ export const Product = ( props) => {
   const { product } = props;
   const navigate = useNavigate ();
 
+  
   return (
     <Card className="mb-2 border-0 product-card"
       onClick={ () => navigate ( `/product/${ product.slug}`)} >

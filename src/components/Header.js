@@ -22,8 +22,6 @@ import { Store } from '../Store';
 import { getError } from '../utils.js';
 
 
-
-
 export const Header = () => {
   const url = "https://rr-server.adaptable.app";
 

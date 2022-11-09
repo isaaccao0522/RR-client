@@ -17,6 +17,7 @@ import aboutBurger from '../screens/images/burgers/about.png';
 export const AboutScreen = () => {
   return (
     <Container className="small-container justify-content-between">
+      
       <Helmet>
         <title>
           about&emsp;GAME of BURGERS

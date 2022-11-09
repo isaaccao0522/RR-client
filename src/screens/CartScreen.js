@@ -28,17 +28,18 @@ export default function CartScreen() {
 
   const navigate = useNavigate ();
 
-  const updateCartHandler = async ( item, quantity) => {
-    const { data } = await Axios.get ( `${ url}/api/products/${ item._id}`);
-    if ( data.countInStock < quantity) {
-      toast.error ( 'Sorry. Product is out of stock');
+  const updateCartHandler = async (item, quantity) => {
+    const { data } = await Axios.get(`${ url}/api/products/${item._id}`);
+    if (data.countInStock < quantity) {
+      toast.error ('Sorry. Product is out of stock');
       return;
-    } else {
-      ctxDispatch ({
-        type: 'CART_ADD_ITEM',
-        payload: { ...item, quantity },
-      });
     }
+    ctxDispatch({
+      type: 'CART_ADD_ITEM',
+      payload: { 
+        ...item, quantity 
+      },
+    });
   };
 
   const removeItemHandler = ( item) => {
@@ -77,7 +78,8 @@ export default function CartScreen() {
                 <ListGroup.Item className="text-bg-dark" key={ item._id} >
                   <Row className="align-items-center">
                     <Col md={ 4}>
-                      <Link to={ `/product/${ item.slug}`} style={{ textDecoration:"none"}}>
+                      <Link to={ `/product/${ item.slug}`} 
+                        style={{ textDecoration:"none"}}>
                         <img src={ item.image}
                           alt={ item.name}
                           className="img-fluid rounded img-thumbnail"

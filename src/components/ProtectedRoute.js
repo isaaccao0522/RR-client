@@ -6,9 +6,7 @@ export const ProtectedRoute = ( { children }) => {
   const { state } = useContext ( Store);
   const { userInfo } = state;
   return (
-    userInfo 
-    ? children 
-    : <Navigate to="/signin" />
+    userInfo ? children : <Navigate to="/signin" />
   )
 };
 
