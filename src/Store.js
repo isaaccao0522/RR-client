@@ -121,7 +121,7 @@ export const StoreProvider = ( props) => {
   
   return (
     <Store.Provider value={value}>
-      {props.children} 
+      { props.children} 
     </Store.Provider>
   );
 };
