@@ -7,7 +7,6 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 export const Banner = ( ) => {
-  // const { products } = props;
   
   const [ index, setIndex] = useState ( 0);
   
@@ -22,7 +21,8 @@ export const Banner = ( ) => {
         onSelect={ handleSelect}
        >
         {/* arya-stark */}
-        <Carousel.Item data-bs-interval="1000" className="carousel-item">
+        <Carousel.Item data-bs-interval="1000" 
+          className="carousel-item">
           <Link to={ '/product/arya-stark'}>
             <img  className="d-block w-50 active carousel-image "
               src="https://lh3.googleusercontent.com/pw/AL9nZEX30aj9-MBRgO2HgJlmQ-qG9k52iqPGzO-dPpl_jOq-SL8nCu-CTjN2lOxprF73UCaAYqYCar9yO7GMfCpSN6zkFKY6XeEmTOqxkCk69lYfDl9YiM4uzp7Bvt_y4lMsVxHQ7TcR9HQj9hZiMg_SoY4g=w680-h383-no?authuser=0"
