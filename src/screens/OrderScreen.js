@@ -153,7 +153,7 @@ export const OrderScreen = () => {
       }
     } else {
       const loadPaypalScript = async () => {
-        const { data: clientId } = await Axios.get ( '/api/keys/paypal', 
+        const { data: clientId } = await Axios.get ( `${ url}/api/keys/paypal`, 
         {
           headers: { authorization: `Bearer ${userInfo.token}` },
         });
@@ -191,7 +191,7 @@ export const OrderScreen = () => {
       .then( async (details) => {
         try {
           dispatch ({ type: 'PAY_REQUEST' });
-          const { data } = await Axios.put ( `/api/orders/${order._id}/pay`,
+          const { data } = await Axios.put ( `${ url}/api/orders/${order._id}/pay`,
             details,
             {
               headers: { authorization: `Bearer ${userInfo.token}` },
@@ -219,7 +219,7 @@ export const OrderScreen = () => {
   const deliverOrderHandler = async () => {
     try {
       dispatch ({ type: 'DELIVER_REQUEST' });
-      const { data } = await Axios.put ( `/api/orders/${ order._id}/deliver`,
+      const { data } = await Axios.put ( `${ url}/api/orders/${ order._id}/deliver`,
         {},
         {
           headers: { authorization: `Bearer ${ userInfo.token}` },
@@ -231,7 +231,7 @@ export const OrderScreen = () => {
       });
       toast.success ( 'Order is delivered');
     } catch ( error) {
-      toast.error ( getError (error));
+      toast.error ( getError ( error));
       dispatch ({ type: 'DELIVER_FAIL' });
     }
   };

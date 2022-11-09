@@ -43,41 +43,42 @@ export const SelectList = () => {
   const fetchData = async () => {
     try {
       const { data } = await axios.get(
-        `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
+        `${ url}/api/products/search?page=${page}&query=${query}&category=${ category}&price=${ price}`
       );
-      dispatch({ type: 'FETCH_SUCCESS', payload: data });
-    } catch (err) {
+      dispatch({ 
+        type: 'FETCH_SUCCESS', 
+        payload: data 
+      });
+    } catch ( error) {
       dispatch({
         type: 'FETCH_FAIL',
-        payload: getError(error),
+        payload: getError ( error),
       });
     }
   };
   fetchData();
-  }, [ category, error, order, page, price, query, rating]);
+  }, [ category, error, page, price, query]);
 
-  const [ categories, setCategories] = useState([]);
+  const [ categories, setCategories] = useState ([]);
 
   useEffect (() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await axios.get(`/api/products/categories`);
+        const { data } = await axios.get(`${ url}/api/products/categories`);
         setCategories(data);
-      } catch (err) {
-        toast.error(getError(err));
+      } catch ( error) {
+        toast.error ( getError ( error));
       }
     };
-    fetchCategories();
-  }, [dispatch]);
+    fetchCategories ();
+  }, [ dispatch]);
 
-const getFilterUrl = (filter) => {
+const getFilterUrl = ( filter) => {
   const filterPage = filter.page || page;
   const filterCategory = filter.category || category;
   const filterQuery = filter.query || query;
-  const filterRating = filter.rating || rating;
-  const filterPrice = filter.price || price;
   const sortOrder = filter.order || order;
-  return `/search?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
+  return `/search?category=${ filterCategory}&query=${ filterQuery}&price=${ filterPrice}&page=${ filterPage}`;
 };
 
 

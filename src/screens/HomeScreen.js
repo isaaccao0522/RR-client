@@ -44,7 +44,7 @@ const reducer = ( state, action) => {
 export const HomeScreen = () => {
   const url = "https://rr-api.onrender.com";
 
-  const [{ loading, error, products }, dispatch] = useReducer ( logger(reducer), {
+  const [{ loading, error, products }, dispatch] = useReducer ( logger ( reducer), {
     products: [],
     loading: true,
     error: '',
@@ -73,7 +73,9 @@ export const HomeScreen = () => {
   return (
     <div>
       <Helmet>
-        <title>GAME of BURGERS</title>
+        <title>
+          GAME of BURGERS
+        </title>
       </Helmet>
 
       <h2 className="text-center mb-3">

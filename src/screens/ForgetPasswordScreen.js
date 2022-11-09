@@ -42,7 +42,10 @@ export const ForgetPasswordScreen = () => {
         payload: data 
       });
       toast.success ( 'Signin Successfully')
-      localStorage.setItem ( 'userInfo', JSON.stringify ( data));
+      localStorage.setItem ( 
+        'userInfo', 
+        JSON.stringify ( data)
+      );
       navigate ( "/profile");
     } catch ( error) {
       toast.error ( 

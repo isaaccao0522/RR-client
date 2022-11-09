@@ -61,11 +61,14 @@ export const OrderHistoryScreen = () => {
         const { data } = await Axios.get ( `${ url}/api/orders/mine`,
           { headers: { Authorization: `Bearer ${ userInfo.token}` } }
         );
-        dispatch ({ type: 'FETCH_SUCCESS', payload: data });
+        dispatch ({ 
+          type: 'FETCH_SUCCESS', 
+          payload: data 
+        });
       } catch ( error) {
         dispatch ({
           type: 'FETCH_FAIL',
-          payload: getError( error),
+          payload: getError ( error),
         });
       }
     };

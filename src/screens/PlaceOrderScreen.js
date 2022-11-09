@@ -41,10 +41,10 @@ export const PlaceOrderScreen = () => {
   const url = "https://rr-api.onrender.com";
 
   const navigate = useNavigate();
-  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { state, dispatch: ctxDispatch } = useContext ( Store);
   const { cart, userInfo } = state;
 
-  const [{ loading }, dispatch] = useReducer(reducer, {
+  const [{ loading }, dispatch] = useReducer (reducer, {
     loading: false,
   });
 
@@ -82,7 +82,7 @@ export const PlaceOrderScreen = () => {
       navigate ( `/order/${ data.order._id}`);
     } catch ( error) {
       dispatch ({ type: 'CREATE_FAIL' });
-      toast.error ( getError( error));
+      toast.error ( getError ( error));
     }
   };
 

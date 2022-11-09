@@ -78,18 +78,19 @@ export const ratings = [
 export default function SearchScreen() {
   const url = "https://rr-api.onrender.com";
   
-  const navigate = useNavigate();
-  const { search } = useLocation();
-  const sp = new URLSearchParams(search); // /search?category=Shirts
-  const category = sp.get('category') || 'all';
-  const query = sp.get('query') || 'all';
-  const price = sp.get('price') || 'all';
-  const rating = sp.get('rating') || 'all';
-  const order = sp.get('order') || 'newest';
-  const page = sp.get('page') || 1;
+  const navigate = useNavigate ();
+  const { search } = useLocation ();
+  const sp = new URLSearchParams ( search); 
+
+  const category = sp.get( 'category') || 'all';
+  const query = sp.get( 'query') || 'all';
+  const price = sp.get( 'price') || 'all';
+  const rating = sp.get( 'rating') || 'all';
+  const order = sp.get( 'order') || 'newest';
+  const page = sp.get( 'page') || 1;
 
   const [{ loading, error, products, pages, countProducts }, dispatch] =
-    useReducer(reducer, {
+    useReducer ( reducer, {
       loading: true,
       error: '',
     });
@@ -134,7 +135,7 @@ export default function SearchScreen() {
     const filterRating = filter.rating || rating;
     const filterPrice = filter.price || price;
     const sortOrder = filter.order || order;
-    return `${ url}/search?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
+    return `/search?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
   };
 
   
