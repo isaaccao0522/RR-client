@@ -50,7 +50,7 @@ const reducer = ( state, action) => {
 
 
 export const  ProductScreen = () => {
-  const url = "https://rr-server.adaptable.app";
+  const url = "https://rr-api.onrender.com";
 
   const params = useParams();
   const { slug } = params;

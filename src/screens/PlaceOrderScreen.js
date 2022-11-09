@@ -38,7 +38,7 @@ const reducer = ( state, action) => {
 
 
 export const PlaceOrderScreen = () => {
-  const url = "https://rr-server.adaptable.app";
+  const url = "https://rr-api.onrender.com";
 
   const navigate = useNavigate();
   const { state, dispatch: ctxDispatch } = useContext(Store);

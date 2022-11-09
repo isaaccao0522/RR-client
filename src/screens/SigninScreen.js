@@ -18,7 +18,7 @@ import { Store } from '../Store';
 
 
 export const SigninScreen = () => {
-  const url = "https://rr-server.adaptable.app";
+  const url = "https://rr-api.onrender.com";
 
   const { search } = useLocation ();
   const redirectInUrl = new URLSearchParams ( search).get ( 'redirect');

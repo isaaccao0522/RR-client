@@ -43,7 +43,7 @@ const reducer = ( state, action) => {
 };
 
 export const OrderHistoryScreen = () => {
-  const url = "https://rr-server.adaptable.app";
+  const url = "https://rr-api.onrender.com";
 
   const { state } = useContext(Store);
   const { userInfo } = state;

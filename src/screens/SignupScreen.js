@@ -21,7 +21,8 @@ import { getError } from '../utils';
 
 
 export const SignupScreen = () => {
-  const url = "https://rr-server.adaptable.app";
+  const url = "https://rr-api.onrender.com";
+
 
   const { state, dispatch: ctxDispatch } = useContext ( Store);
   const { userInfo } = state;
